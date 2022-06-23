@@ -3,18 +3,18 @@ import PropTypes from 'prop-types';
 import Social from '../Social/Social';
 import Logo from '../Logo/Logo';
 import Nav from '../Nav/Nav';
-import Banner from '../Banner/Banner';
+import Carousel from '../Carousel/Carousel';
 
 import './Header.css';
 
 const Header = () => (
     <header className="Header">
-        <Social/>
+        <Social />
         <div id="logo-nav-wrapper">
-            <Logo/>
-            <Nav/>
+            <Logo />
+            <Nav />
         </div>
-        <Banner/>
+        <Carousel />
     </header>
 );
 
