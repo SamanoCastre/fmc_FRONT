@@ -1,15 +1,30 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './Dropdown.css';
+import {Link} from 'react-router-dom';
 
-const Dropdown = () => (
+const Dropdown = (props) => {
+
+  return(
   <div className="Dropdown">
-    Dropdown Component
+       <Link className={props.currentItem === props.item ? 'active header-toggle' : "header-toggle"} to="#" >{props.header} {props.currentItem === props.item && <i className="fa fa-chevron-down"></i>}{props.currentItem !== props.item && <i className="fa fa-chevron-up"></i>}
+       </Link> 
+       {props.currentItem === props.item  &&
+        <ul>
+            {
+              props.body.map((item, index) => 
+                 <li key={index}><Link to={item.href}>
+                  {
+                     item.text.split('\n').map((it, i) => 
+                       <div key={i}>{it}</div>
+                     )
+                  }
+                
+                </Link></li>
+              )
+            }
+        </ul>
+      }
   </div>
 );
-
-Dropdown.propTypes = {};
-
-Dropdown.defaultProps = {};
-
+}
 export default Dropdown;

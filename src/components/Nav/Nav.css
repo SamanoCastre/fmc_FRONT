@@ -1,1 +1,127 @@
-.Nav {}
+.Nav {
+    
+}
+
+.Nav .mobile-toggle{
+    color: #e3722e;
+    font-size: 30px;
+}
+
+.Nav>ul{
+    margin-top:45px;
+    display:flex;
+    flex-direction: row;
+}
+
+.Nav li{
+    list-style: none;
+    border-radius: 3px;
+}
+
+.Nav>li{
+    height:35px;
+}
+
+.Nav li a{
+    text-decoration: none;
+    width:100%;
+    height:100%;
+    display:block;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    text-transform: uppercase;
+    color: #777777;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: all 0.5s ease-in-out;
+    background-color:white;
+}
+
+
+.Nav li a.active{
+    background-color: #e3722e;
+    color:white;
+}
+
+.Nav ul li ul a{
+    background-color: #e3722e;
+    height:fit-content;
+    color:white;
+    font-size: 12px;
+}
+
+.Dropdown ul{
+    position: absolute;
+    width:100%;
+    min-width: 220px;
+    right: 0;
+    margin-top: -2px;
+    border-radius: 3px;
+}
+
+.Dropdown li a{
+    border-top: solid saddlebrown 1px;
+    transition: all 0.5s ease-in-out;
+}
+
+.Dropdown li, .Dropdown li a{
+    border-radius: 0 !important;
+}
+
+.Dropdown li a:hover{
+    background-color:saddlebrown;
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+
+.Nav>ul>li>a:not(.active):hover, .Dropdown>a:not(.active):hover{
+    color: #e3722e;
+    transition: all 0.5s ease-in-out;
+}
+
+@media only screen and (min-width: 769px) {
+    .Nav>.mobile-toggle {
+       display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+ 
+    .Nav>.mobile-toggle {
+        display:inline;
+        position:absolute;
+        right:20px;
+        top: 10px;
+        cursor: pointer;
+     }
+
+     .mobile-menu>ul{
+        flex-direction:column;
+        width:75vw;
+        max-height:70vh;
+        overflow:scroll;
+        margin-top: 50px !important;
+        display:none;
+        box-shadow: 0 2px 4px rgba(1, 1, 1, 0.15);
+     }
+
+     .mobile-menu.active>ul{
+        display:flex;
+     }
+
+     .Nav li a, .Nav li{
+        border-radius: 0!important;
+        line-height: 30px;
+     }
+
+
+     .Dropdown ul{
+        position:relative;
+        display:flex;
+        flex-direction:column;
+     }
+    
+}
