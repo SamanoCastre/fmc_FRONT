@@ -51,13 +51,6 @@ const Nav = () => {
       element.classList.remove('fa-times');
       element.classList.add('fa-bars');
     }
-    
-
-    /*
-    document.querySelectorAll('.header-toggle').forEach((element)=>{
-      element.classList.remove('active');
-    });
-    event.target.classList.add('active');*/
   };
 
  

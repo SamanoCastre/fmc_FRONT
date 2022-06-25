@@ -12,7 +12,6 @@ import LoginForm from '../../components/LoginForm/LoginForm';
 
 const Home = () => (
   <section className="Home">
-    Home Component
     <Organization />
     <Donation />
     <News />

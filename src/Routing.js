@@ -5,15 +5,16 @@ import Administration from './pages/Administration/Administration';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 export default function Routing() {
-  return (
-    <BrowserRouter>
-     <Header/>
-      <Routes>
-        <Route exact path="/" element={<Home/>} />
-        <Route exact path="/administration" element={<Administration/>} />
-        <Route path="*" element={<Error404/>} />
-      </Routes>
-      <Footer/>
-    </BrowserRouter>
-  );
+    
+    return (
+      <BrowserRouter>
+      <Header/>
+        <Routes>
+          <Route exact path="/" element={<Home/>} />
+          <Route exact path="/administration" element={<Administration/>} />
+          <Route path="*" element={<Error404/>} />
+        </Routes>
+        <Footer/>
+      </BrowserRouter>
+    );
 }
