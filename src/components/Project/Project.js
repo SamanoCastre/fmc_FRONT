@@ -1,15 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect }from 'react';
 import './Project.css';
+import ProjectService from '../../services/ProjectService';
 
-const Project = () => (
-  <div className="Project">
-    Project Component
-  </div>
+const Project = () => { 
+  
+  
+  return (
+  <section className="Project" id="action">
+       
+  </section>
 );
-
-Project.propTypes = {};
-
-Project.defaultProps = {};
+}
 
 export default Project;

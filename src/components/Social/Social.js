@@ -11,7 +11,7 @@ const Social = () => {
    },[]);
   
   return(
-      <div className="Social">
+      <div className="Social" id="home">
         <ul id="social-coordinates">
           {socialInfo['phone'] && <li><i className="fa fa-phone"></i> {socialInfo['phone']}</li>}
           {socialInfo['email'] && <li><i className="fa fa-envelope"></i> {socialInfo['email']}</li>}

@@ -9,16 +9,18 @@ import Team from '../../components/Team/Team';
 import ContactForm from '../../components/ContactForm/ContactForm';
 import LoginForm from '../../components/LoginForm/LoginForm';
 
+import './Home.css';
+
 
 const Home = () => (
   <section className="Home">
     <Organization />
-    <Donation />
     <News />
     <Action />
     <Team />
     <ContactForm />
     <LoginForm />
+    <Donation />
   </section>
 );
 

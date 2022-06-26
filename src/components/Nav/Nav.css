@@ -8,10 +8,11 @@
 }
 
 .Nav>ul{
-    margin-top:45px;
     display:flex;
     flex-direction: row;
 }
+
+
 
 .Nav li{
     list-style: none;
@@ -85,6 +86,16 @@
 @media only screen and (min-width: 769px) {
     .Nav>.mobile-toggle {
        display: none;
+    }
+
+    .Nav>ul{
+        margin-top:45px;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .logo-nav-wrapper-top .Nav>ul{
+        margin-top:28px !important;
+        transition: all 0.5s ease-in-out;
     }
 }
 

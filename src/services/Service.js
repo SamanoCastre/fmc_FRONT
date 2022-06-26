@@ -1,5 +1,5 @@
 class Service{
-    list = () => { console.log('list')};
+    list = () => {};
     create = (item, table) => {};
     read = (id, table) => {};
     update = (item, table) => {};

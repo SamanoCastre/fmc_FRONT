@@ -1,3 +1,6 @@
+.Header{
+    
+}
 #logo-nav-wrapper {
     position:fixed;
     width: 100%;
@@ -24,6 +27,9 @@
         height:130px;
         padding-left: 12%;
         padding-right: 12%;
+    }
+    .logo-nav-wrapper-top{
+        height:100px !important;
     }
 }
 
