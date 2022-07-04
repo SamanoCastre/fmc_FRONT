@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "FMC App",
+  "name": "Application de l'association MAX CADET d'Haïti",
   "icons": [
     {
       "src": "favicon.ico",

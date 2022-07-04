@@ -31,6 +31,7 @@ const Dropdown = (props) => {
           setStatus('active');
           document.getElementById(item).scrollIntoView();
         }
+        document.querySelector('.mobile-menu-toggler').click();
       } 
   };
 

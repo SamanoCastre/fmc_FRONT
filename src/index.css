@@ -55,3 +55,7 @@ a,input, textarea{
   }
 
 }
+
+.disclaimer {
+  display:none !important;
+}

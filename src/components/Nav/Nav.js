@@ -45,6 +45,7 @@
           toggler.classList.add('active');
         }
         document.getElementById(item).scrollIntoView();
+        document.querySelector('.mobile-menu-toggler').click();
       }
 
     const mobileMenuToggleHandler = (event) =>{
@@ -65,7 +66,7 @@
 
     return (
       <div className={mobileMenu + "Nav mobile-menu desktop-menu"}>
-            <i className="header-toggle mobile-toggle fa fa-bars" onClick={(e) =>mobileMenuToggleHandler(e)}></i>
+            <i className="mobile-menu-toggler header-toggle mobile-toggle fa fa-bars" onClick={(e) =>mobileMenuToggleHandler(e)}></i>
             <ul>
                 <li onClick={(e)=>toggleHandler(e, 'home')}>
                   <Link className="header-toggle" to="#home">Accueil</Link>

@@ -14,11 +14,12 @@ const Header = () => {
       var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
       
       if (st > lastScrollTop) {
-        st > 50 ? nav.classList.add('logo-nav-wrapper-top') :  nav.classList.remove('logo-nav-wrapper-top');
+        st >= 50 ? nav.classList.add('logo-nav-wrapper-top') :  nav.classList.remove('logo-nav-wrapper-top');
       } 
       else {
-        st <= 0 ?  nav.classList.remove('logo-nav-wrapper-top') : nav.classList.add('logo-nav-wrapper-top');
+        st <= 50 ?  nav.classList.remove('logo-nav-wrapper-top') : nav.classList.add('logo-nav-wrapper-top');
       }
+      //alert(st+" et " + lastScrollTop)
       lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
   }, false
   );
