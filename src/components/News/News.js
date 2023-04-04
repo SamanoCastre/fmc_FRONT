@@ -1,37 +1,19 @@
 import React, { useState, useEffect }from 'react';
 import './News.css';
-import NewsService from '../../services/NewsService';
 
-const News = () => {
 
-  const [news, setNews] = useState([]);
+const News = (props) => {
+
   
-
-  useEffect(() => {
-    const service = new NewsService();
-    setNews(service.list());
-
-  },[]);
   
   return(
-  <section className="News" id="news">
-        <div className="space"></div>
-        <div className="news-header title">Actualités de la clinique</div>
-        <div className="header-line"></div>
-        <div className="news-body">
-             {
-              news.map((aNews,index) =>
-                <div key={index} className="news-card">
-                    <div className="news-photo"><img src={"images/news/" + aNews.photo} alt={aNews.title} /></div>
-                    <div className="news-title">{aNews.title}</div>
-                    <div className="news-shortdescription">{aNews.description}</div>
-                    <div className="news-date">Date : {aNews.date}</div>
-                    <button className="news-plus-button">voir plus...</button>
-                </div>
-              )
-             }
-        </div>
-    </section>
+    <div  className="news-card">
+        <div className="news-photo"><img src={"images/news/" + props.newsObj.photo} alt={props.newsObj.title} /></div>
+        <div className="news-title">{props.newsObj.title}</div>
+        <div className="news-shortdescription">{props.newsObj.description}</div>
+        <div className="news-date">Date : {props.newsObj.date}</div>
+        <a className="news-plus-button" href="/news/5">voir plus...</a>
+    </div>
 );
   }
 

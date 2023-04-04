@@ -1,0 +1,35 @@
+.Donation {}
+
+.donation-body{
+    width: 100%;
+    margin: auto;
+    padding: 1rem;
+    margin-top: 2rem;
+    background: whitesmoke;
+    box-shadow: 0 2px 15px rgba(1, 1, 1, 0.15);
+    box-sizing: border-box;
+}
+
+#haWidget{
+   margin: auto;
+   width: 95%; 
+   border: none;
+   min-height: 80rem;
+   display: block;
+   overflow-y: auto;
+   overflow-x: hidden;
+   box-sizing: border-box;
+}
+.donation-header{
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+    font-size: 1.3rem;
+    color: #e3722e;
+}
+
+.donation-reason, .donation-data{
+    width:70%;
+    text-align: justify;
+    margin: auto;
+}

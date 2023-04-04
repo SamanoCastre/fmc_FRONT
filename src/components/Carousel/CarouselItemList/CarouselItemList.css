@@ -1,0 +1,215 @@
+.CarouselItemList {
+    background-color:white;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.CarouselItemList>*{
+    position:absolute;
+    color:white;
+}
+
+.CarouselItemList img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    top: 0;
+    left: 0;
+    animation:hideImage 0.5s linear;
+    animation-fill-mode:forwards;
+}
+
+.CarouselItemList img.active {
+    display: block;
+    animation:showImage 0.5s linear;
+    animation-fill-mode:forwards;
+}
+
+.CarouselItemList .direction {
+    position:absolute;
+    z-index: 100;
+    cursor: pointer;
+    transition: all 0.5s;
+    color: rgb(160, 155, 155);
+    background-color:white;
+    box-sizing: border-box;
+    border-radius:50%;
+}
+
+.CarouselItemList .direction:hover {
+ background-color:rgba(255, 255, 255,0.8);
+}
+
+.CarouselItemList .previous {
+    left: -3.5rem;
+}
+
+.CarouselItemList .next {
+    right: -3.5rem;
+}
+
+.CarouselItemList .image-text{
+    padding: 1rem;
+    padding-top: 2rem;
+    z-index: 50;
+    position: absolute;
+    
+    text-align: center;
+    
+    background-color:rgba(78, 75, 75, 0.317);
+
+    animation:dropText 1s linear;
+    animation-fill-mode:forwards;
+    
+}
+
+.CarouselItemList .image-text .image-title {
+    text-transform: uppercase;
+    font-family: "Open Sans", sans-serif;
+}
+
+.CarouselItemList .image-text .image-description {
+    /*font-family: 'Droid Serif', serif;*/
+}
+
+.CarouselItemList .image-text .image-dots {
+    font-size: 1rem;
+    letter-spacing: 0.5rem;
+    color:rgba(255,255,255,0.5);
+}
+
+.CarouselItemList .image-text .image-dots .active{
+    color: white;
+}
+
+@media only screen and (min-width: 769px) {
+    .CarouselItemList{
+        height:70vh;
+    }
+    .CarouselItemList .image-text .image-title {
+        font-size:2.5rem;
+        text-transform: uppercase;
+        margin-bottom:3rem;
+    }
+
+    .CarouselItemList .image-text .image-description {
+        font-size:1.5rem;
+        text-transform: uppercase;
+    }
+
+    .CarouselItemList .image-text .image-dots {
+        margin-bottom: 2rem;
+
+    }
+
+    .CarouselItemList .image-text{
+        left: 50%;
+        top:-50%;
+        transform: translate(-50%, -30%);
+        width: 100%;
+    }
+
+    .CarouselItemList .direction {
+        top:50%;
+        transform: translate(0, -50%);
+        font-size:2rem;
+        width:3rem;
+        height:3rem;
+        line-height:3.5rem;
+        padding-left: 0.8rem;
+    }
+
+    .CarouselItemList:hover .previous{
+        left:2rem;
+        transition: all 0.5s;
+    }
+    
+    .CarouselItemList:hover .next{
+        right:2rem;
+        transition: all 0.5s;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .CarouselItemList{
+        margin-top: 50px;
+        height:30vh;
+    }
+    .CarouselItemList .image-text .image-title {
+        font-size:1rem;
+        text-transform: uppercase;
+        margin-bottom:1rem;
+        line-height:2rem;
+        font-weight: bolder;
+    }
+
+    .CarouselItemList .image-text .image-dots {
+        margin-bottom: 1rem;
+    }
+
+    .CarouselItemList .image-text .image-description {
+        font-size:1rem;
+    }
+
+    .CarouselItemList .image-text{
+        left: 50%;
+        top:-50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+    }
+
+    .CarouselItemList .direction {
+        top:50%;
+        transform: translate(0, -50%);
+        font-size:1.5rem;
+        width:2rem;
+        height:2rem;
+        line-height:2.1rem;
+        padding-left: 0.5rem;
+    }
+
+    .CarouselItemList:hover .previous{
+        left:1rem;
+        transition: all 0.5s;
+    }
+    
+    .CarouselItemList:hover .next{
+        right:1rem;
+        transition: all 0.5s;
+    }
+
+}
+
+@keyframes hideImage {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes showImage {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes dropText {
+    0%{
+        top:-50%;
+    }
+    50%{
+        top:70%;
+    }
+    70%{
+        top:40%;
+    }
+    100%{
+        top:50%;
+    }
+}

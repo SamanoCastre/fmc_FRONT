@@ -1,0 +1,13 @@
+.LineChart {
+   width:75%;
+   
+}
+
+.LineChart canvas {
+    /*
+   width: 50vw !important;
+   height: 25rem !important;
+   margin-left: 13vw;*/
+   
+}
+

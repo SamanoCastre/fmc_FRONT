@@ -5,7 +5,7 @@ class SocialService extends Service {
     list = () => {
         const socialInfo = [];
         socialInfo['phone'] = '+33758962345';
-        socialInfo['email'] = 'relais-france-europe@gmail.com';
+        socialInfo['email'] = 'relais.france_fmc@yahoo.com';
         socialInfo['facebook'] = 'https://www.facebook.com/profile';
         socialInfo['instagram'] = 'https://www.facebook.com/profile';
         socialInfo['twitter'] = 'https://www.facebook.com/profile';

@@ -18,6 +18,14 @@ body {
   box-sizing: border-box;
 }
 
+
+
+@media only screen and (min-width: 769px) {
+  .Home{
+    padding-top: 130px;
+  }
+}
+
 ul{
   margin: 0;
   padding: 0;

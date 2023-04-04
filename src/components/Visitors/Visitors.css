@@ -1,0 +1,37 @@
+.Visitors {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.visitors-toggle{
+    margin: 0;
+    list-style: none;
+    background-color:whitesmoke;
+    padding:1rem;
+    height:fit-content;
+    box-shadow: 0 2px 4px rgba(1, 1, 1, 0.15);
+}
+
+.visitors-toggle li{
+    cursor: pointer;
+    height:3rem;
+    font-size:1rem;
+    line-height:2rem;
+    display: flex;
+    flex-direction: row;
+    border-bottom: solid white 2px;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+.visitors-toggle li i{
+  font-size:1.5rem;
+  line-height:2rem;
+}
+
+.visitors-toggle li .visitors-text{
+    height:100%;
+    margin-left:0.5rem;
+    line-height:2rem;
+}

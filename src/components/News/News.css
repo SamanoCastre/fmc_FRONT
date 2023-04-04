@@ -1,15 +1,3 @@
-.News {
-    
-}
-
-.news-body{
-    padding: 1rem 12% 1rem 12%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
 .news-card{
     margin-top: 3rem;
     width:30%;
@@ -69,17 +57,9 @@
     cursor: pointer;
 }
 
-
 @media only screen and (max-width: 768px) {
     .news-card{
         width: 100% !important;
-    }
-
-    .news-body{
-        padding: 0 5% 0.5rem 5%;
-
-    }
-    .news-card{
         margin-top: 2rem !important;
     }
 }

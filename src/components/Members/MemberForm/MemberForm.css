@@ -1,0 +1,10 @@
+.MemberForm{
+   margin-top: 8rem;
+   height: 100vh;
+   width: 100%;
+   background:rgb(229, 229, 237);
+   text-align:center;
+   box-sizing: border-box;
+  line-height: 80vh;
+  font-size: 5rem;
+}

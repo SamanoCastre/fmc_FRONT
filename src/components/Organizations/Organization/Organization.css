@@ -1,0 +1,22 @@
+.Organization {
+    width: 100%;
+}
+
+
+.Organization-body{
+    padding:2rem 12% 0 12%;
+    text-align: justify;
+    font-size: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .Organization-body{
+        padding: 0 5% 1rem 5%;
+
+    }
+}
+
+.Organization ul{
+    margin-left: 3rem;;
+}
