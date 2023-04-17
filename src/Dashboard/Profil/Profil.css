@@ -1,0 +1,66 @@
+.Profil{
+   margin: auto;
+}
+
+.Profil .profil-header{
+   position: relative;
+   background-color: #ece3dd;
+   padding: 1rem;
+}
+
+.header-image{
+   margin: auto;
+   border-radius: 50%;
+   width: 15rem;
+   height: 15rem;
+   border : solid #e3722e 3px;
+}
+
+
+.profil-creation-date{
+  position: absolute;
+  top: 0;
+  left: 1rem;
+}
+
+.header-image img{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   border-radius: 50%;
+}
+
+.update-image-form {
+   margin: auto;
+   border-radius: 0.2rem;
+   width: fit-content;
+   padding: 0 0.5rem;
+   cursor: pointer;
+}
+
+.update-image-button{
+   margin: auto;
+   margin-top:1rem;
+   text-align: center;
+   background-color: white;
+   color: #e3722e;
+   border-radius: 0.2rem;
+   width: fit-content;
+   padding: 0 0.5rem;
+   cursor: pointer;
+}
+
+.profil-body{
+  margin: auto;
+  background-color: white;
+}
+
+.profil-infos{
+  padding: 1rem;
+  border-bottom: solid #ece3dd 1px;
+}
+
+.update-password-button{
+  text-decoration: underline;
+  cursor: pointer;
+}

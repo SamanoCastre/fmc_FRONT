@@ -1,0 +1,11 @@
+.Dropdown {
+    position: relative;
+}
+
+.Dropdown  > ul > li > i {
+    line-height: 2.5rem;
+}
+
+.Dropdown i {
+    margin-right: 0.5rem;
+}

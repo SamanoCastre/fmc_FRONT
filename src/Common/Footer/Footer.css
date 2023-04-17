@@ -1,0 +1,38 @@
+footer {
+    background-color: #e3722e;
+    color: white;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+}
+
+footer>*{
+    height:100%;
+}
+
+.copyright, .mentions,.gosommet{
+    height: 50px;
+    line-height:50px;
+}
+
+
+footer a{
+    color:white;
+    display:inline-block;
+}
+
+.admin footer{
+    width:80% !important;
+    left: 20%;
+    bottom:0 !important;
+    position:fixed !important;
+}

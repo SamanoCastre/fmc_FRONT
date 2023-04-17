@@ -1,0 +1,260 @@
+
+  .App{
+    
+  }
+
+  .button {
+    background-color:#e3722e;
+    color: white;
+    padding: 0.2rem 0.5rem 0.2rem 0.5erm;
+    border-radius: 0.3rem;
+  }
+
+  .add-buttons {
+    flex-wrap: wrap;
+  }
+  .add-buttons>div{
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    color: #e3722e;
+    justify-content: center;
+  }
+  .add-buttons>div>i {
+    line-height: 1.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  .add-button-item{
+    background-color: #c9a99590;
+    margin: 0.5rem;
+    border-radius: 0.rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    width: fit-content;
+  }
+  
+  .remove-button{
+    cursor: pointer;
+    color: #e3722e;
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+    line-height: 2.8rem;
+  }
+  
+  .add-buttons>div:hover div{
+    text-decoration: underline;
+  }
+  
+  input[type=text], select, textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #e3722e;
+  }
+  
+  .action-button-group{
+    position:absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+}
+.action-button{
+    background-color: #db68207e;
+    color: white;
+    padding:0.2rem 0.5rem 0.2rem 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.action-button:hover{
+    background-color: #e3722e;
+}
+
+.edit-button, .add-button{
+    margin-right: 0.1rem;
+}
+
+.delete-button{
+    border-top-right-radius:0.8rem;
+}
+
+  .image-preview{
+    position: relative;
+  }
+  ul{
+    margin: 0;
+    padding: 0;
+  }
+
+  form .row {
+    min-height: 40px;
+    margin-bottom: 1rem;
+  }
+  
+  a,input, textarea{
+    outline: none;
+  }
+  .row.submit-button {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .title{
+      padding-top:2rem;
+      text-transform: uppercase;
+      width: 100%;
+      text-align: center;
+      font-size:1.5rem;
+  }
+  
+  .space{
+    height:6rem;
+    background-color:white;
+  }
+  
+  .header-line{
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: #e3722e;
+    margin: 0 auto;
+    margin-top: 1rem;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .space{
+      height:2rem !important;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  input[type=text],input[type=number],input[type=password],input[type=email], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    box-sizing: border-box;
+    background-color: white;
+  }
+  
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+  
+  input[type=submit] {
+    background-color: #e3722e;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #e3722e;
+  }
+  
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+  .row{
+    width: 100%;
+  }
+
+  .col {
+    float: left;
+    margin-top: 6px;
+  }
+
+  .col-15 {
+    width: 15%;
+  }
+  
+  .col-20 {
+    width: 20%;
+  }
+
+  .col-25 {
+    width: 25%;
+  }
+
+  .col-50 {
+    width: 50%;
+  }
+
+  .col-60 {
+    width: 60%;
+  }
+
+  .col-70 {
+    width: 70%;
+  }
+  
+  .col-75 {
+    width: 75%;
+  }
+
+  .col-80 {
+    width: 80%;
+  }
+
+  .col-85 {
+    width: 85%;
+  }
+
+  .col-95 {
+    width: 95%;
+  }
+
+  .col-100 {
+    width: 100%;
+  }
+  
+  /* Clear floats after the columns */
+  /*
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }*/
+
+  .row.success{
+    color: green;
+    text-align: center;
+    display: block;
+}
+
+.row.error{
+    color: red;
+    text-align: center;
+    display: block;
+}
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-25,.col-50 .col-75, .col-100, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+  #mention .content-body{
+    text-align: justify;
+    margin: auto;
+    text-align: center;
+    width: 80%;
+  }

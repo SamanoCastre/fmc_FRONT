@@ -1,0 +1,100 @@
+.SideBar {
+    background-color:#ece3dd; /*rgb(36, 33, 33)*/;
+    box-sizing: border-box;
+    position:fixed;
+    top: 0;
+    left: 0;
+    height:100%;
+    z-index: 2;
+    overflow:hidden;
+}
+
+.SideBar>ul{
+    height:90%;
+    overflow:scroll;
+}
+
+.SideBar h1{
+    width:100%;
+    text-align: center;
+    border-bottom: solid white 2px;
+    padding-bottom: 0.3rem;
+    margin: auto;
+    color: #e3722e;
+    font-weight: bolder;
+    font-size: 1.8rem;
+    height:50px;
+    line-height:50px;
+    box-sizing: border-box;
+}
+.SideBar li {
+    display: flex;
+    flex-direction: row;
+}
+
+.SideBar li a{
+    color: #e3722e;
+    text-transform: capitalize;
+    width:100%;
+    padding: 1rem;
+    display: block;
+}
+    /*
+.SideBar > ul > li > span {
+    margin-left:1rem;
+}*/
+.SideBar > ul > li > a>i {
+    margin-right: 0.5rem;
+    line-height: 1.5rem;
+}
+
+@media only screen and (min-width: 769px) {
+    .SideBar{
+        width:20%;
+    }
+}
+
+.SideBar li{
+    font-size: 1rem;
+    list-style:none;
+    cursor: pointer;
+    color:#e3722e;
+    transition: all 0.5s ease-in-out;
+}
+
+.SideBar>ul>li{
+    border-bottom: solid whitesmoke 1px;
+}
+/*
+.SideBar li:hover{
+ background-color: white;
+ transition: all 0.2s ease-in-out;
+}*/
+
+.SideBar>ul>li>ul>li:hover{
+    background-color:#efd3c1;
+    border-radius: 0.2rem;
+}
+
+.SideBar li.active{
+    background-color:white !important;
+}
+
+.SideBar .Dropdown ul {
+    position: relative !important;
+    margin-left: 1rem;
+}
+
+.SideBar .Dropdown li a {
+    display: block !important;
+    border-top: 0 !important;
+    padding: 0.5rem;
+}
+
+.SideBar .Dropdown li{
+    margin-top: 0.5rem;
+    width: 100% !important;
+    height: 100% !important;
+    padding:0 !important;
+    padding-left: 0.5rem !important;
+}

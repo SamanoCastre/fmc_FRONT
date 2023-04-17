@@ -1,6 +1,7 @@
 html {
   scroll-behavior: smooth;
 }
+
 body {
   margin: 0;
 
@@ -18,52 +19,10 @@ body {
   box-sizing: border-box;
 }
 
-
-
-@media only screen and (min-width: 769px) {
-  .Home{
-    padding-top: 130px;
-  }
-}
-
-ul{
-  margin: 0;
-  padding: 0;
-}
-
-a,input, textarea{
-  outline: none;
-}
-
-.title{
-    padding-top:2rem;
-    text-transform: uppercase;
-    width: 100%;
-    text-align: center;
-    font-size:1.5rem;
-}
-
-.space{
-  height:6rem;
-  background-color:white;
-}
-
-.header-line{
-  display: block;
-  width: 70px;
-  height: 4px;
-  background: #e3722e;
-  margin: 0 auto;
-  margin-top: 1rem;
-}
-
-@media only screen and (max-width: 768px) {
-  .space{
-    height:2rem !important;
-  }
-
-}
-
 .disclaimer {
   display:none !important;
+}
+
+#root{
+  width: 100%;
 }

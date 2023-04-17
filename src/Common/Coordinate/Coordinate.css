@@ -1,0 +1,18 @@
+.Coordinate a:hover{
+    background-color:white;
+    color:#e3722e;
+    transition: all 0.3s ease-in-out;
+}
+
+.Coordinate a{
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: solid white 1px;
+    width:2rem;
+    height:2rem;
+    display: block;
+    text-decoration: none;
+    color:white;
+    text-align: center;
+    line-height: 2rem;
+}

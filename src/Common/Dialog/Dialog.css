@@ -1,0 +1,37 @@
+.Dialog{
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.dialog-header{
+    color: #e3722e;
+    font-weight: bold;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+
+  .dialog-body{
+    padding: 1rem;
+    color: #e3722e;
+    color: rgb(104, 97, 97);
+  }
+
+  .dialog-footer{
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-end;
+  }
+
+  .dialog-footer .button{
+     border: 0;
+     padding: 0.5rem;
+     margin-left: 0.5rem;
+     cursor: pointer;
+  }
+
+  .button.confirm {
+    background-color: rgb(98, 151, 17);
+  }

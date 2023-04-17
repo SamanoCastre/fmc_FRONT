@@ -1,0 +1,46 @@
+.VisitorStatistic > .wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.VisitorStatistic h1{
+    text-align: center;
+    color: #e3722e;
+    font-size:1.5rem;
+    text-transform: uppercase;
+}
+
+.VisitorStatistic .visitors-content-toggle, .VisitorStatistic .visitors-period-toggle{
+    margin: 0;
+    list-style: none;
+    background-color:whitesmoke;
+    height:fit-content;
+    box-shadow: 0 2px 4px rgba(1, 1, 1, 0.15);
+    display: flex;
+    margin-bottom: 0.5rem;
+}
+
+.VisitorStatistic .visitors-content-toggle li, .VisitorStatistic .visitors-period-toggle li{
+    cursor: pointer;
+    font-size:0.9rem;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border-right: solid #e3722e 0.1rem;
+    text-transform: capitalize;
+    
+}
+
+.VisitorStatistic .visitors-content-toggle li i, .VisitorStatistic .visitors-period-toggle li i{
+  font-size:1.2rem;
+  line-height:2rem;
+}
+
+.VisitorStatistic .visitors-content-toggle li .visitors-text, .VisitorStatistic .visitors-period-toggle li .visitors-text{
+    height:100%;
+    margin-left:0.5rem;
+    line-height:2rem;
+}

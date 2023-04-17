@@ -1,0 +1,28 @@
+.CoordinateList{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   width: 100%;
+}
+.CoordinateList > ul{
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+
+.CoordinateList > ul > li{
+  list-style: none;
+  padding-right: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .CoordinateList{
+        flex-direction: column;
+    }
+    .CoordinateList > ul {
+        width:100%;
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+}

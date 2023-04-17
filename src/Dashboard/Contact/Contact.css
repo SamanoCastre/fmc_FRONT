@@ -1,0 +1,55 @@
+.Contact {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.contact-request{
+    margin-bottom : 1rem;
+}
+
+.contact-request .contact-text{
+    box-shadow: 0 2px 4px rgba(1, 1, 1, 0.15);
+    padding: 0.5rem;
+    background-color: white;
+    border-radius:0.5rem;
+}
+
+.message-indicator.request {
+    color:red;
+    font-weight: bolder;
+}
+
+.message-indicator.response {
+    color:green;
+    font-weight: bolder;
+}
+
+.contact-header-details{
+    position:relative;
+}
+
+.contact-date{
+    position:absolute;
+    right:0;
+}
+
+.Contact-body{
+    padding: 1rem 12% 1rem 12%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 768px) {
+    .Contact-card{
+        width: 100% !important;
+    }
+
+    .Contact-body{
+        padding: 0 5% 0.5rem 5%;
+
+    }
+}

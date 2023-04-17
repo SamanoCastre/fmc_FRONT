@@ -1,70 +1,208 @@
-import React from 'react';
-import {BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from './home';
-import Dashboard from './dashboard';
-import ActivityPage from './components/Activities/ActivityPage/ActivityPage';
-import ProjectPage from './components/Projects/ProjectPage/ProjectPage';
-import NewsPage from './components/News/NewsPage/NewsPage';
-import PostPage from './components/Posts/PostPage/PostPage';
-import ActivityList from './components/Activities/ActivityList/ActivityList';
-import ProjectList from './components/Projects/ProjectList/ProjectList';
-import NewsList from './components/News/NewsList/NewsList';
-import PostList from './components/Posts/PostList/PostList';
-import Error404 from './components/Error/Error404';
-import Footer from './components/globals/Footer/Footer';
-import ActivityForm from './components/Activities/ActivityForm/ActivityForm';
-import ProjectForm from './components/Projects/ProjectForm/ProjectForm';
-import NewsForm from './components/News/NewsForm/NewsForm';
-import PostForm from './components/Posts/PostForm/PostForm';
-import SocialForm from './components/Socials/SocialForm/SocialForm';
-import SocialList from './components/Socials/SocialList/SocialList';
-import TeamForm from './components/Teams/TeamForm/TeamForm';
-import TeamList from './components/Teams/TeamList/TeamList';
-import MemberForm from './components/Members/MemberForm/MemberForm';
-import MemberList from './components/Members/MemberList/MemberList';
-import ContactList from './components/Contacts/ContactList/ContactList';
-import ContactForm from './components/Contacts/ContactForm/ContactForm';
+import React, {useEffect} from "react";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import "./app.css";
+import Home from "./Home/home";
+import Dashboard from "./Dashboard/Dashboard";
+import Error404 from "./Common/Error/Error404";
+import UserList from "./Common/UserList/UserList";
+import ContactList from "./Dashboard/ContactList/ContactList";
+import VisitorStatistic from "./Dashboard/Visitors/VisitorStatistic";
+import MenuForm from "./Form/MenuForm/MenuForm";
+import LogOut from "./Dashboard/LogOut/LogOut";
+import Content from "./Common/Content/Content";
+import CarouselItemList from "./Common/CarouselItemList/CarouselItemList";
+import FmcValuesForm from "./Form/FmcValuesForm/FmcValuesForm";
+import {ActionTypes} from "./Utils/Enums";
+import {ConnectionService} from "./services/ConnectionService";
+import {CarouselService} from "./services/CarouselService";
+import {MenuService} from "./services/MenuService";
+import {FmcValuesService} from "./services/FmcValuesService";
+import {UserService} from "./services/UserService";
+import {ContentService} from "./services/ContentService";
+import { VisitorService } from "./services/VisitorService";
 
-import './index.css';
-import Visitors from './components/Visitors/Visitors';
+import CodeForm from "./Form/CodeForm/CodeForm";
+import {MenuType} from "./Utils/Enums";
+import EmailForm from "./Form/EmailForm/EmailForm";
+import PasswordForm from "./Form/PasswordForm/PasswordForm";
+import ContentList from "./Common/ContentList/ContentList";
+import ScrollToTop from "./Common/ScrollTop/ScrollTop";
+import {EContentTypes, EUserTypes, EFMCValuesTypes} from "./Utils/Enums";
+import Profil from "./Dashboard/Profil/Profil";
 
 const App = () => {
-  
-  return(
-    <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<Home/>} >
-          <Route exact path="activities/:id" element = {<ActivityPage/>}/>
-          <Route exact path="projects/:id" element = {<ProjectPage/>}/>
-          <Route exact path="news/:id" element = {<NewsPage/>}/>
-          <Route exact path="posts/:id" element = {<PostPage/>}/>
-        </Route>
+  const dispatch = useDispatch();
+  const visitedContents = useSelector(state => state.common_state.visitedContents);
+  const connectionService = ConnectionService.newInstance();
+  const carouselService = CarouselService.newInstance();
+  const contentService = ContentService.newInstance();
+  const  fmcValuesService =  FmcValuesService.newInstance();
+  const menuService = MenuService.newInstance();
+  const userService = UserService.newInstance();
+  const visitorService = VisitorService.newInstance();
 
-        <Route exact path="/admin" element={<Dashboard/>} >
-          <Route exact path="visitors" element = {<Visitors/>}/>
-          <Route exact path="activities" element = {<ActivityList/>}/>
-          <Route exact path="projects" element = {<ProjectList/>}/>
-          <Route exact path="news" element = {<NewsList/>}/>
-          <Route exact path="posts" element = {<PostList/>}/>
-          <Route exact path="socials" element = {<SocialList/>}/>
-          <Route exact path="teams" element = {<TeamList/>}/>
-          <Route exact path="members" element = {<MemberList/>}/>
-          <Route exact path="contacts" element = {<ContactList/>}/>
-          
-          <Route exact path="activity-form/:id" element = {<ActivityForm/>}/>
-          <Route exact path="project-form/:id" element = {<ProjectForm/>}/>
-          <Route exact path="news-form/:id" element = {<NewsForm/>}/>
-          <Route exact path="post-form/:id" element = {<PostForm/>}/>
-          <Route exact path="social-form/:id" element = {<SocialForm/>}/>
-          <Route exact path="team-form/:id" element = {<TeamForm/>}/>
-          <Route exact path="member-form" element = {<MemberForm/>}/>
-          <Route exact path="contact-form" element = {<ContactForm/>}/>
-        </Route>
+  useEffect(() => {
+      connectionService.data = { dispatch : dispatch}
+      carouselService.data = { dispatch : dispatch}
+      contentService.data = { dispatch : dispatch}
+      fmcValuesService.data = { dispatch : dispatch}
+      menuService.data = { dispatch : dispatch}
+      userService.data = { dispatch : dispatch}
+      visitorService.data = { dispatch : dispatch}
+      connectionService.generateToken().then(() => {
+            contentService.list();
+            fmcValuesService.list();
+            menuService.list();
+            carouselService.list();
+            userService.list();
+            visitorService.setVisited(visitedContents, "home");
+            connectionService.setIntervalRefreshToken();
+      });
+  });
 
-        <Route path="*" element={<Error404/>} />
-      </Routes>
-      <Footer/>
-  </BrowserRouter>
-);
-}
+  return (
+    <div className="App row">
+      <BrowserRouter>
+        <ScrollToTop />
+        <Routes>
+          <Route 
+            path="/"
+            element={<Home />}>
+              <Route
+              exact
+              path="home" />
+            <Route
+              exact
+              path="recovery"
+              element={<EmailForm type={ActionTypes.RECOVERY} />}
+            />
+            <Route
+              exact
+              path="password/:code/:id"
+              element={<PasswordForm type={ActionTypes.RECOVERY} />}
+            />
+            <Route 
+              exact 
+              path="code/:code/:type/:id" 
+              element={<CodeForm />} />
+            <Route 
+              exact 
+              path="contents/:id" 
+              element={<Content />} />
+            <Route
+              exact
+              path="contents/mention"
+              element={<Content type={EContentTypes.Mention} />}
+            />
+            <Route
+              exact
+              path="contents/relais"
+              element={<Content type={EContentTypes.Relais} />}
+            />
+            <Route
+              exact
+              path="contents/dental"
+              element={<Content type={EContentTypes.Dental} />}
+            />
+            <Route
+              exact
+              path="contents/organization"
+              element={<Content type={EContentTypes.Organization} />}
+            />
+          </Route>
+          <Route 
+            exact 
+            path="/dashboard" 
+            element={<Dashboard />}>
+            <Route 
+              exact 
+              path="logout" 
+              element={<LogOut />} />
+            <Route 
+              exact 
+              path="visitors-stat" 
+              element={<VisitorStatistic />} />
+            <Route 
+              exact 
+              path="carousel-items" 
+              element={<CarouselItemList />} />
+            <Route 
+              exact 
+              path="our-contents/:id" 
+              element={<ContentList />} />
+            <Route
+              exact
+              path="our-coordinates"
+              element={<FmcValuesForm type={EFMCValuesTypes.Coordinate} />}
+            />
+            <Route
+              exact
+              path="our-sites"
+              element={<FmcValuesForm type={EFMCValuesTypes.Site} />}
+            />
+            <Route
+              exact
+              path="our-labels"
+              element={<FmcValuesForm type={EFMCValuesTypes.Label} />}
+            />
+            <Route
+              exact
+              path="our-team"
+              element={<UserList type={EUserTypes.TEAM} />}
+            />
+            <Route
+              exact
+              path="our-members"
+              element={<UserList type={EUserTypes.MEMBER} />}
+            />
+            <Route exact path="contacts" element={<ContactList />} />
+            <Route
+              exact
+              path="horizontal-menu"
+              element={<MenuForm type={MenuType.Horizontal} />}
+            />
+            <Route
+              exact
+              path="vertical-menu"
+              element={<MenuForm type={MenuType.Vertical} />}
+            />
+            <Route
+              exact
+              path="contents/donation"
+              element={<Content type={EContentTypes.Donation} />}
+            />
+            <Route
+              exact
+              path="contents/mention"
+              element={<Content type={EContentTypes.Mention} />}
+            />
+            <Route
+              exact
+              path="contents/relais"
+              element={<Content type={EContentTypes.Relais} />}
+            />
+            <Route
+              exact
+              path="contents/dental"
+              element={<Content type={EContentTypes.Dental} />}
+            />
+            <Route
+              exact
+              path="contents/organization"
+              element={<Content type={EContentTypes.Organization} />}
+            />
+            <Route 
+              exact 
+              path="my-profile" 
+              element={<Profil />} />
+          </Route>
+          <Route 
+            path="*" 
+            element={<Error404 />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
+};
 export default App;

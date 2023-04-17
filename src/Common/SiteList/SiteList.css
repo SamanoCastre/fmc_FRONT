@@ -1,0 +1,41 @@
+.SiteList{
+    margin: 3rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   width: 100%;
+}
+
+.siteList-body {
+    max-width: 40rem;
+    margin: auto;
+      margin-top: auto;
+    padding: 1rem;
+    margin-top: 2rem;
+    box-shadow: 0 2px 15px rgba(1, 1, 1, 0.15);
+    background: whitesmoke;
+    position: relative;
+  }
+.siteList-body ul{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.siteList-body ul  li{
+  list-style: none;
+  padding-right: 1rem;
+  padding: 0.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .SiteList{
+        flex-direction: column;
+    }
+    .SiteList > ul {
+        width:100%;
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+}
